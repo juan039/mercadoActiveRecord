@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<title>Agregar Item</title>
+</head>
+<body>
+	<h3>Agregar Items</h3>
+	<form action="/usuarios/<%=@usuario.id%>" method="post">
+		<div>
+			<label for="nombre">Nombre del item</label>
+			<input type="text" name="nombre">
+		</div>
+		<div>
+			<label for="Precio">Precio del item</label>
+			<input type="text" name="precio">
+		</div>
+		<input type="submit" value="Agregar item a <%=@usuario.nombre %>">		
+	</form>
+</body>
+</html>

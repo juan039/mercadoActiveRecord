@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  	<title><%= @usuario.nombre %></title>
+  </head>
+  <body>
+    <h1><%= @usuario.nombre %></h1>
+
+	<h2>Lista de Items <a href="/usuarios/<%=@usuario.id%>/new">+</a></h2>	
+	<ul>
+      <% @items.each do |item| %>
+      <li>
+        <%= item.nombre %> 
+        	<form action="/items/<%= item.id %>" method="post">
+				<input type="hidden" name="_method" value="DELETE">
+				<input type="submit" value="-">
+			</form>
+      </li>
+      <% end %>
+    </ul>
+
+<!-- 	<h3>Agregar Items</h3>
+	<form action="/usuarios/<%=@usuario.id%>" method="post">
+		<div>
+			<label for="nombre">Nombre del item</label>
+			<input type="text" name="nombre">
+		</div>
+		<div>
+			<label for="Precio">Precio del item</label>
+			<input type="text" name="precio">
+		</div>
+		<input type="submit" value="Agregar item a <%=@usuario.nombre %>">		
+	</form> -->
+
+	<h4><a href="/">Volver a Inicio</a></h4>
+
+	<form action="/usuarios/<%= @usuario.id %>" method="post">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" value="Borrar usuario">
+	</form>
+  </body>
+</html>
