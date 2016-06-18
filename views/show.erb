@@ -20,6 +20,14 @@
       <% end %>
     </ul>
 
+    <h3>Total: 
+    	<% total=0 %>
+		<% @items.each do |item| %>
+			<% total=item.precio+total %>
+		<% end %>
+		<%= total %>
+    </h3>
+
 <!-- 	<h3>Agregar Items</h3>
 	<form action="/usuarios/<%=@usuario.id%>" method="post">
 		<div>

@@ -80,5 +80,5 @@ delete '/items/:id' do
 	item=Item.find(params[:id])
 	usuario=item.usuario_id
 	item.destroy
-	redirect '/usuarios/'+usuario
+	redirect to ('/usuarios/%d' %usuario)
 end
